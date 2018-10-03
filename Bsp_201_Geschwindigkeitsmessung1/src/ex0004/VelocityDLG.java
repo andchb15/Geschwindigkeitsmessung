@@ -1,4 +1,3 @@
-
 package ex0004;
 
 /**
@@ -8,7 +7,6 @@ package ex0004;
 public class VelocityDLG extends javax.swing.JDialog
 {
 
-  
     public VelocityDLG(java.awt.Frame parent, boolean modal)
     {
         super(parent, modal);
@@ -25,21 +23,96 @@ public class VelocityDLG extends javax.swing.JDialog
     private void initComponents()
     {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        lbDatum = new javax.swing.JLabel();
+        tfDatum = new javax.swing.JTextField();
+        lbUhrzeit = new javax.swing.JLabel();
+        tfUhrzeit = new javax.swing.JTextField();
+        lbKennzeichen = new javax.swing.JLabel();
+        tfKennzeichen = new javax.swing.JTextField();
+        lbGemessen = new javax.swing.JLabel();
+        tfGemessen = new javax.swing.JTextField();
+        lbErlaubt = new javax.swing.JLabel();
+        tfErlaubt = new javax.swing.JTextField();
+        btAdd = new javax.swing.JButton();
+        btCancel = new javax.swing.JButton();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        getContentPane().setLayout(new java.awt.GridLayout(6, 2));
+
+        lbDatum.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        lbDatum.setText("Datum :");
+        getContentPane().add(lbDatum);
+
+        tfDatum.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        tfDatum.setText("02.04.2016");
+        getContentPane().add(tfDatum);
+
+        lbUhrzeit.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        lbUhrzeit.setText("Uhrzeit :");
+        getContentPane().add(lbUhrzeit);
+
+        tfUhrzeit.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        tfUhrzeit.setText("18:05");
+        getContentPane().add(tfUhrzeit);
+
+        lbKennzeichen.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        lbKennzeichen.setText("Kennzeichen :");
+        getContentPane().add(lbKennzeichen);
+
+        tfKennzeichen.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        tfKennzeichen.setText("LB-291-W");
+        getContentPane().add(tfKennzeichen);
+
+        lbGemessen.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        lbGemessen.setText("V-Gemessen :");
+        getContentPane().add(lbGemessen);
+
+        tfGemessen.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        tfGemessen.setText("95");
+        getContentPane().add(tfGemessen);
+
+        lbErlaubt.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        lbErlaubt.setText("V-Erlaubt :");
+        getContentPane().add(lbErlaubt);
+
+        tfErlaubt.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        tfErlaubt.setText("70");
+        getContentPane().add(tfErlaubt);
+
+        btAdd.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        btAdd.setText("Übernehmen");
+        btAdd.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                onOk(evt);
+            }
+        });
+        getContentPane().add(btAdd);
+
+        btCancel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        btCancel.setText("Abbrechen");
+        btCancel.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                onCancel(evt);
+            }
+        });
+        getContentPane().add(btCancel);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void onOk(java.awt.event.ActionEvent evt)//GEN-FIRST:event_onOk
+    {//GEN-HEADEREND:event_onOk
+
+    }//GEN-LAST:event_onOk
+
+    private void onCancel(java.awt.event.ActionEvent evt)//GEN-FIRST:event_onCancel
+    {//GEN-HEADEREND:event_onCancel
+
+    }//GEN-LAST:event_onCancel
 
     /**
      * @param args the command line arguments
@@ -96,5 +169,17 @@ public class VelocityDLG extends javax.swing.JDialog
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btAdd;
+    private javax.swing.JButton btCancel;
+    private javax.swing.JLabel lbDatum;
+    private javax.swing.JLabel lbErlaubt;
+    private javax.swing.JLabel lbGemessen;
+    private javax.swing.JLabel lbKennzeichen;
+    private javax.swing.JLabel lbUhrzeit;
+    private javax.swing.JTextField tfDatum;
+    private javax.swing.JTextField tfErlaubt;
+    private javax.swing.JTextField tfGemessen;
+    private javax.swing.JTextField tfKennzeichen;
+    private javax.swing.JTextField tfUhrzeit;
     // End of variables declaration//GEN-END:variables
 }
