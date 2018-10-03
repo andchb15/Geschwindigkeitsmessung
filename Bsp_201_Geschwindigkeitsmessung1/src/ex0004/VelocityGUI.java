@@ -1,4 +1,3 @@
-
 package ex0004;
 
 /**
@@ -7,9 +6,9 @@ package ex0004;
  */
 public class VelocityGUI extends javax.swing.JFrame
 {
+
     private VeloCityTableModel model = new VeloCityTableModel();
 
-    
     public VelocityGUI()
     {
         initComponents();
@@ -132,27 +131,34 @@ public class VelocityGUI extends javax.swing.JFrame
 
     private void onSaveData(java.awt.event.ActionEvent evt)//GEN-FIRST:event_onSaveData
     {//GEN-HEADEREND:event_onSaveData
-        
+
     }//GEN-LAST:event_onSaveData
 
     private void onAddMeasure(java.awt.event.ActionEvent evt)//GEN-FIRST:event_onAddMeasure
     {//GEN-HEADEREND:event_onAddMeasure
-       
+        VelocityDLG dlg = new VelocityDLG(this, true);
+        dlg.setVisible(true);
+        if (dlg.isOk())
+        {
+            Measurement m = dlg.getMeasurment();
+            model.add(m);
+            model.fireTableDataChanged();
+        }
     }//GEN-LAST:event_onAddMeasure
 
     private void onRemoveMeasure(java.awt.event.ActionEvent evt)//GEN-FIRST:event_onRemoveMeasure
     {//GEN-HEADEREND:event_onRemoveMeasure
-        
+
     }//GEN-LAST:event_onRemoveMeasure
 
     private void onDisplayAverage(java.awt.event.ActionEvent evt)//GEN-FIRST:event_onDisplayAverage
     {//GEN-HEADEREND:event_onDisplayAverage
-        
+
     }//GEN-LAST:event_onDisplayAverage
 
     private void onLoadData(java.awt.event.ActionEvent evt)//GEN-FIRST:event_onLoadData
     {//GEN-HEADEREND:event_onLoadData
-        
+
     }//GEN-LAST:event_onLoadData
 
     private void onExit(java.awt.event.ActionEvent evt)//GEN-FIRST:event_onExit

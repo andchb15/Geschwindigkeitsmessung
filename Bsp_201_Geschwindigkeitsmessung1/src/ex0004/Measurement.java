@@ -1,6 +1,8 @@
 package ex0004;
 
 import java.sql.Time;
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.Date;
 
 /**
@@ -10,41 +12,51 @@ import java.util.Date;
 public class Measurement
 {
 
-    private Date date;
-    private Time time;
+    private LocalDate date;
+    private LocalTime time;
     private String kennzeichen;
     private int gemesseneGeschw;
     private int erlaubteGeschw;
     private int uebertretung;
 
-    public Measurement(Date date, Time time, String kennzeichen, int gemesseneGeschw, int erlaubteGeschw, int ueberttretung)
+    public Measurement(LocalDate date, LocalTime time, String kennzeichen, int gemesseneGeschw, int erlaubteGeschw, int uebertretung)
     {
         this.date = date;
         this.time = time;
         this.kennzeichen = kennzeichen;
         this.gemesseneGeschw = gemesseneGeschw;
         this.erlaubteGeschw = erlaubteGeschw;
-        this.uebertretung = ueberttretung;
+        this.uebertretung = uebertretung;
     }
 
-    public Date getDate()
+    public LocalDate getDate()
     {
         return date;
     }
 
-    public void setDate(Date date)
+    public void setDate(LocalDate date)
     {
         this.date = date;
     }
 
-    public Time getTime()
+    public LocalTime getTime()
     {
         return time;
     }
 
-    public void setTime(Time time)
+    public void setTime(LocalTime time)
     {
         this.time = time;
+    }
+
+    public int getUebertretung()
+    {
+        return uebertretung;
+    }
+
+    public void setUebertretung(int uebertretung)
+    {
+        this.uebertretung = uebertretung;
     }
 
     public String getKennzeichen()

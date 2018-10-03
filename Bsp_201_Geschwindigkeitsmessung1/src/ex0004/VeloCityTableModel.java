@@ -15,6 +15,12 @@ public class VeloCityTableModel extends AbstractTableModel
     {
         "Datum", "Uhrzeit", "Kennzeichen", "Gemessen", "Erlaubt", "Übertretung"
     };
+    
+    public void add(Measurement m)
+    {
+        liste.add(m);      
+    }
+
 
     @Override
     public int getRowCount()
@@ -58,4 +64,5 @@ public class VeloCityTableModel extends AbstractTableModel
 
     }
 
+    
 }

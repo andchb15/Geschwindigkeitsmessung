@@ -1,5 +1,9 @@
 package ex0004;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+
 /**
  *
  * @author Christopher Andrä
@@ -7,10 +11,30 @@ package ex0004;
 public class VelocityDLG extends javax.swing.JDialog
 {
 
+    private boolean ok;
+
     public VelocityDLG(java.awt.Frame parent, boolean modal)
     {
         super(parent, modal);
         initComponents();
+    }
+
+    public boolean isOk()
+    {
+        return ok;
+    }
+
+    public Measurement getMeasurment()
+    {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
+        LocalDate ld = LocalDate.parse(tfDatum.getText(), formatter);
+        LocalTime tm = LocalTime.parse(tfUhrzeit.getText());
+        String kennzeichen = tfKennzeichen.getText();
+        int gemessen = Integer.parseInt(tfGemessen.getText());
+        int erlaubt = Integer.parseInt(tfErlaubt.getText());
+        int uebertreten = gemessen - erlaubt;
+        Measurement me = new Measurement(ld, tm, kennzeichen, gemessen, erlaubt, uebertreten);
+        return me;
     }
 
     /**
@@ -106,12 +130,14 @@ public class VelocityDLG extends javax.swing.JDialog
 
     private void onOk(java.awt.event.ActionEvent evt)//GEN-FIRST:event_onOk
     {//GEN-HEADEREND:event_onOk
-
+        ok = true;
+        dispose();
     }//GEN-LAST:event_onOk
 
     private void onCancel(java.awt.event.ActionEvent evt)//GEN-FIRST:event_onCancel
     {//GEN-HEADEREND:event_onCancel
-
+        ok = false;
+        dispose();
     }//GEN-LAST:event_onCancel
 
     /**
