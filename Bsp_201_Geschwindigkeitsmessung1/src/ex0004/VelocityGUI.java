@@ -7,11 +7,13 @@ package ex0004;
  */
 public class VelocityGUI extends javax.swing.JFrame
 {
+    private VeloCityTableModel model = new VeloCityTableModel();
 
     
     public VelocityGUI()
     {
         initComponents();
+        tbMeasurment.setModel(model);
     }
 
     /**
@@ -35,9 +37,8 @@ public class VelocityGUI extends javax.swing.JFrame
         miSave = new javax.swing.JMenuItem();
         miLoad = new javax.swing.JMenuItem();
         miExit = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
 
-        miAdd.setText("jMenuItem4");
+        miAdd.setText("Hinzufügen");
         miAdd.addActionListener(new java.awt.event.ActionListener()
         {
             public void actionPerformed(java.awt.event.ActionEvent evt)
@@ -47,7 +48,7 @@ public class VelocityGUI extends javax.swing.JFrame
         });
         pmMeasurements.add(miAdd);
 
-        miDelete.setText("jMenuItem5");
+        miDelete.setText("Löschen");
         miDelete.addActionListener(new java.awt.event.ActionListener()
         {
             public void actionPerformed(java.awt.event.ActionEvent evt)
@@ -57,7 +58,7 @@ public class VelocityGUI extends javax.swing.JFrame
         });
         pmMeasurements.add(miDelete);
 
-        miAverage.setText("jMenuItem6");
+        miAverage.setText("Durchschnitt");
         miAverage.addActionListener(new java.awt.event.ActionListener()
         {
             public void actionPerformed(java.awt.event.ActionEvent evt)
@@ -68,6 +69,9 @@ public class VelocityGUI extends javax.swing.JFrame
         pmMeasurements.add(miAverage);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jScrollPane1.setBorder(javax.swing.BorderFactory.createTitledBorder("Messungen"));
+        jScrollPane1.setComponentPopupMenu(pmMeasurements);
 
         tbMeasurment.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][]
@@ -82,6 +86,7 @@ public class VelocityGUI extends javax.swing.JFrame
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        tbMeasurment.setComponentPopupMenu(pmMeasurements);
         jScrollPane1.setViewportView(tbMeasurment);
 
         getContentPane().add(jScrollPane1, java.awt.BorderLayout.CENTER);
@@ -119,7 +124,6 @@ public class VelocityGUI extends javax.swing.JFrame
         jMenu1.add(miExit);
 
         jMenuBar1.add(jMenu1);
-        jMenuBar1.add(jMenu2);
 
         setJMenuBar(jMenuBar1);
 
@@ -203,7 +207,6 @@ public class VelocityGUI extends javax.swing.JFrame
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JMenuItem miAdd;

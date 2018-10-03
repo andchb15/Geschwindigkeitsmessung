@@ -15,7 +15,7 @@ public class Measurement
     private String kennzeichen;
     private int gemesseneGeschw;
     private int erlaubteGeschw;
-    private int ueberttretung;
+    private int uebertretung;
 
     public Measurement(Date date, Time time, String kennzeichen, int gemesseneGeschw, int erlaubteGeschw, int ueberttretung)
     {
@@ -24,7 +24,7 @@ public class Measurement
         this.kennzeichen = kennzeichen;
         this.gemesseneGeschw = gemesseneGeschw;
         this.erlaubteGeschw = erlaubteGeschw;
-        this.ueberttretung = ueberttretung;
+        this.uebertretung = ueberttretung;
     }
 
     public Date getDate()
@@ -79,12 +79,12 @@ public class Measurement
 
     public int getUeberttretung()
     {
-        return ueberttretung;
+        return uebertretung;
     }
 
     public void setUeberttretung(int ueberttretung)
     {
-        this.ueberttretung = ueberttretung;
+        this.uebertretung = ueberttretung;
     }
 
 }
