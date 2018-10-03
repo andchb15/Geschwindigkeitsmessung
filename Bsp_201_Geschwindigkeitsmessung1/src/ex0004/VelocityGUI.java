@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package ex0004;
 
 /**
@@ -12,9 +8,7 @@ package ex0004;
 public class VelocityGUI extends javax.swing.JFrame
 {
 
-    /**
-     * Creates new form VelocityGUI
-     */
+    
     public VelocityGUI()
     {
         initComponents();
@@ -30,21 +24,137 @@ public class VelocityGUI extends javax.swing.JFrame
     private void initComponents()
     {
 
+        pmMeasurements = new javax.swing.JPopupMenu();
+        miAdd = new javax.swing.JMenuItem();
+        miDelete = new javax.swing.JMenuItem();
+        miAverage = new javax.swing.JMenuItem();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tbMeasurment = new javax.swing.JTable();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        miSave = new javax.swing.JMenuItem();
+        miLoad = new javax.swing.JMenuItem();
+        miExit = new javax.swing.JMenuItem();
+        jMenu2 = new javax.swing.JMenu();
+
+        miAdd.setText("jMenuItem4");
+        miAdd.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                onAddMeasure(evt);
+            }
+        });
+        pmMeasurements.add(miAdd);
+
+        miDelete.setText("jMenuItem5");
+        miDelete.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                onRemoveMeasure(evt);
+            }
+        });
+        pmMeasurements.add(miDelete);
+
+        miAverage.setText("jMenuItem6");
+        miAverage.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                onDisplayAverage(evt);
+            }
+        });
+        pmMeasurements.add(miAverage);
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        tbMeasurment.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][]
+            {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String []
+            {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(tbMeasurment);
+
+        getContentPane().add(jScrollPane1, java.awt.BorderLayout.CENTER);
+
+        jMenu1.setText("Datei");
+
+        miSave.setText("Spreichern");
+        miSave.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                onSaveData(evt);
+            }
+        });
+        jMenu1.add(miSave);
+
+        miLoad.setText("Laden");
+        miLoad.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                onLoadData(evt);
+            }
+        });
+        jMenu1.add(miLoad);
+
+        miExit.setText("Exit");
+        miExit.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                onExit(evt);
+            }
+        });
+        jMenu1.add(miExit);
+
+        jMenuBar1.add(jMenu1);
+        jMenuBar1.add(jMenu2);
+
+        setJMenuBar(jMenuBar1);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void onSaveData(java.awt.event.ActionEvent evt)//GEN-FIRST:event_onSaveData
+    {//GEN-HEADEREND:event_onSaveData
+        
+    }//GEN-LAST:event_onSaveData
+
+    private void onAddMeasure(java.awt.event.ActionEvent evt)//GEN-FIRST:event_onAddMeasure
+    {//GEN-HEADEREND:event_onAddMeasure
+       
+    }//GEN-LAST:event_onAddMeasure
+
+    private void onRemoveMeasure(java.awt.event.ActionEvent evt)//GEN-FIRST:event_onRemoveMeasure
+    {//GEN-HEADEREND:event_onRemoveMeasure
+        
+    }//GEN-LAST:event_onRemoveMeasure
+
+    private void onDisplayAverage(java.awt.event.ActionEvent evt)//GEN-FIRST:event_onDisplayAverage
+    {//GEN-HEADEREND:event_onDisplayAverage
+        
+    }//GEN-LAST:event_onDisplayAverage
+
+    private void onLoadData(java.awt.event.ActionEvent evt)//GEN-FIRST:event_onLoadData
+    {//GEN-HEADEREND:event_onLoadData
+        
+    }//GEN-LAST:event_onLoadData
+
+    private void onExit(java.awt.event.ActionEvent evt)//GEN-FIRST:event_onExit
+    {//GEN-HEADEREND:event_onExit
+        dispose();
+    }//GEN-LAST:event_onExit
 
     /**
      * @param args the command line arguments
@@ -92,5 +202,17 @@ public class VelocityGUI extends javax.swing.JFrame
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JMenuItem miAdd;
+    private javax.swing.JMenuItem miAverage;
+    private javax.swing.JMenuItem miDelete;
+    private javax.swing.JMenuItem miExit;
+    private javax.swing.JMenuItem miLoad;
+    private javax.swing.JMenuItem miSave;
+    private javax.swing.JPopupMenu pmMeasurements;
+    private javax.swing.JTable tbMeasurment;
     // End of variables declaration//GEN-END:variables
 }
